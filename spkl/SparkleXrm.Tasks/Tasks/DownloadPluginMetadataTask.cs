@@ -54,10 +54,12 @@ namespace SparkleXrm.Tasks
                     {
                         // Backup 
                         File.WriteAllText(parser.FilePath + DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak", parser.Code, parser.CurEncoding);
+
+                        // Remove existing attributes prior to editing file
+                        parser.RemoveExistingAttributes();
+
                         foreach (var pluginType in parser.ClassNames)
                         {
-                            // Remove existing attributes
-                            parser.RemoveExistingAttributes();
 
                             if (parser.IsPlugin(pluginType))
                             {
@@ -187,7 +189,7 @@ namespace SparkleXrm.Tasks
                             )
                         {
                             Id = step.Id.ToString(),
-                            DeleteAsyncOperation = step.Mode.Value != 0 && step.AsyncAutoDelete.Value,
+                            DeleteAsyncOperation = step.Mode.Value != 0 && step.AsyncAutoDelete.HasValue ? step.AsyncAutoDelete.Value : false,
                         };
                     }
 

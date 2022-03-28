@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SparkleXrm.Tasks.Tests</RootNamespace>
     <AssemblyName>SparkleXrm.Tasks.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -180,12 +180,6 @@
     <Compile Include="TestWebResources.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SparkleXrm.Tasks\SparkleXrm.Tasks.csproj">
-      <Project>{439ffd12-81e6-41dd-8aed-35a526051d45}</Project>
-      <Name>SparkleXrm.Tasks</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -209,6 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CustomBaseClassPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SparkleXrm.Tasks\SparkleXrm.Tasks.csproj">
+      <Project>{439ffd12-81e6-41dd-8aed-35a526051d45}</Project>
+      <Name>SparkleXrm.Tasks</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
